@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@android:color/white"
     android:orientation="vertical"
-    tools:context="com.showhintdemo.MainActivity">
+    tools:context="dip.com.onboardingexample.MainActivity">
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -16,21 +16,23 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
             <!-- Toolbar instead of ActionBar so the drawer_menu can slide on top -->
-            <android.support.v7.widget.Toolbar
+            <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@android:color/black"
                 android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
                 app:contentInsetStart="0dp">
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="100dp"
+
                     android:minHeight="?attr/actionBarSize">
                     <ImageView
                         android:id="@+id/imgSettings"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_alignParentLeft="true"
                         android:padding="8dp"
                         android:src="@drawable/settings" />
                     <TextView
@@ -38,6 +40,7 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:gravity="center"
+
                         android:singleLine="true"
                         android:text="HOME"
                         android:textAppearance="?android:attr/textAppearanceMedium"
@@ -45,13 +48,14 @@
                         android:textStyle="bold" />
                     <ImageView
                         android:id="@+id/imgMenu"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_alignParentRight="true"
                         android:layout_gravity="right"
                         android:padding="8dp"
                         android:src="@drawable/menu" />
-                </LinearLayout>
-            </android.support.v7.widget.Toolbar>
+                </RelativeLayout>
+            </androidx.appcompat.widget.Toolbar>
             <TextView
                 android:id="@+id/textMessage"
                 android:layout_width="match_parent"
@@ -62,21 +66,27 @@
                 android:textSize="22sp"
                 android:visibility="gone" />
         </LinearLayout>
+
         <RelativeLayout
             android:id="@+id/rlOverlay"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/img_transparent_bg">
+            android:layout_marginTop="70dp"
+            android:background="#80000000">
+
             <LinearLayout
                 android:id="@+id/llSettings"
                 android:layout_width="wrap_content"
+                android:layout_marginLeft="50dp"
                 android:layout_height="wrap_content">
+
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingLeft="@dimen/activity_horizontal_margin"
-                    android:paddingTop="@dimen/activity_horizontal_margin"
-                    android:src="@drawable/img_settings_indicator" />
+                    android:paddingLeft="10dp"
+                    android:paddingTop="10dp"
+                    android:src="@drawable/onboarding_arrow_down" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -85,12 +95,15 @@
                     android:textColor="@android:color/white"
                     android:textSize="22sp" />
             </LinearLayout>
+
             <LinearLayout
                 android:id="@+id/llMenu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
+                android:layout_marginRight="50dp"
                 android:visibility="gone">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -98,21 +111,23 @@
                     android:text="Open menu from here"
                     android:textColor="@android:color/white"
                     android:textSize="22sp" />
+
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingRight="10dp"
                     android:paddingTop="10dp"
-                    android:src="@drawable/ic_launcher_background" />
+                    android:paddingRight="10dp"
+                    android:src="@drawable/onboarding_arrow_down_right" />
             </LinearLayout>
+
             <TextView
                 android:id="@+id/textHelp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
                 android:layout_alignParentRight="true"
-                android:layout_marginBottom="16dp"
+                android:layout_alignParentBottom="true"
                 android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
                 android:text="Next"
                 android:textColor="@android:color/white"
                 android:textSize="22sp" />
